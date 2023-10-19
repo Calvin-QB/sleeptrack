@@ -1,0 +1,43 @@
+ion-button#send::part(native) {
+  width: 125px;
+  height: 125px;
+  border-radius: 100% !important;
+}
+
+.custom-col {
+  --border-color: rgb(165, 114, 247);
+  color: rgb(165, 114, 247);
+}
+
+.center {
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 100px;
+}
+.center-card {
+  text-align: center;
+}
+ion-content {
+  --padding-top: 50px;
+}
+
+.fnt-size {
+  font-size: 16px;
+}
+
+ion-content {
+  --background: url(https://cutewallpaper.org/23/android-flat-wallpaper/86222874.jpg)
+    0 0/100% 100% no-repeat !important;
+  background-color: #fff;
+}
+.opac {
+  opacity: 0.95;
+}
+
+.btn-size {
+  padding-bottom: 0px;
+  height: 10px;
+}
+.btn-pad {
+  padding-left: 200px;
+}

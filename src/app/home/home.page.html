@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+  <ion-list class="ion-padding-top">
+    <ion-item>
+      <ion-label class="my-label ion-text-wrap" position="stacked"
+        >How are you feeling?</ion-label
+      >
+      <ion-select placeholder="Select One" [(ngModel)]="sleepVal">
+        <ion-select-option value="1"
+          >1. Feeling active, vital, alert, or wide awake</ion-select-option
+        >
+        <ion-select-option value="2"
+          >2. Functioning at high levels, but not at peak; able to
+          concentrate</ion-select-option
+        >
+        <ion-select-option value="3"
+          >3. Awake, but relaxed; responsive but not fully
+          alert</ion-select-option
+        >
+        <ion-select-option value="4"
+          >4. Somewhat foggy, let down</ion-select-option
+        >
+        <ion-select-option value="5"
+          >5. Foggy; losing interest in remaining awake; slowed
+          down</ion-select-option
+        >
+        <ion-select-option value="6"
+          >6. Sleepy, woozy, fighting sleep; prefer to lie
+          down</ion-select-option
+        >
+        <ion-select-option value="7"
+          >7. No longer fighting sleep, sleep onset soon; having dream-like
+          thoughts</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="center">
+    <ion-button (click)="selectedSleep()" color="primary"
+      >Confirm Selection</ion-button
+    >
+    <ion-ripple-effect></ion-ripple-effect>
+  </div>
+
+  <div class="center-card" *ngIf="lastSelection">
+    <ion-card class="opac">
+      <div class="ion-text-right btn-pad">
+        <ion-button class="btn-size" fill="clear" (click)="hideCard()">
+          <ion-icon
+            end
+            color="medium"
+            size="small"
+            name="close-sharp"
+          ></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Previous log </ion-card-title>
+
+        <ion-card-subtitle class="ion-padding-top"
+          >{{lastSelection.loggedAt.toLocaleTimeString([], { month: 'long', day:
+          'numeric', hour: '2-digit', minute: '2-digit'})}}</ion-card-subtitle
+        >
+      </ion-card-header>
+
+      <ion-card-content> {{lastSelection.summaryString()}} </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

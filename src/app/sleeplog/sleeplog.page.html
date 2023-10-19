@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="center" *ngIf="!startDate">
+    <ion-button
+      fill="outline"
+      (click)="buttonClicked()"
+      id="send"
+      strong="true"
+      class="custom-col"
+    >
+      <div class="custom-col">Sleep<br />Now<br /></div>
+    </ion-button>
+  </div>
+
+  <div class="center" *ngIf="startDate">
+    <ion-button
+      fill="outline"
+      (click)="buttonClicked()"
+      color="warning"
+      id="send"
+      strong="true"
+    >
+      <div>Wake<br />Now<br /></div>
+    </ion-button>
+  </div>
+
+  <div *ngIf="lastSlept">
+    <ion-card class="opac">
+      <div class="ion-text-right btn-pad">
+        <ion-button class="btn-size" fill="clear" (click)="hideCard()">
+          <ion-icon
+            end
+            color="medium"
+            size="small"
+            name="close-sharp"
+          ></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-header class="center-card">
+        <ion-card-subtitle class="fnt-size">Summary</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-card-subtitle class="center-card">
+          <ion-icon name="calendar-sharp"></ion-icon>
+          Date</ion-card-subtitle
+        >
+        <ion-card-title class="fnt-size center-card"
+          >{{lastSlept.dateString()}}</ion-card-title
+        >
+
+        <ion-card-subtitle class="center-card ion-padding-top">
+          <ion-icon name="time-sharp"></ion-icon>
+          Sleep Duration</ion-card-subtitle
+        >
+        <ion-card-title class="center-card fnt-size ion-padding-bottom"
+          >{{lastSlept.summaryString()}}</ion-card-title
+        >
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

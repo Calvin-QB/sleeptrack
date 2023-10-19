@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Data </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of totalList.slice().reverse()">
+      <ion-label>
+        <h2 class="ion-text-wrap">{{item.dateString()}}</h2>
+        <h4 class="ion-text-wrap">{{item.summaryString()}}</h4>
+        <p class="ion-padding-top">
+          {{item.loggedAt.toLocaleTimeString([], {hour: '2-digit', minute:
+          '2-digit'})}}
+        </p></ion-label
+      >
+    </ion-item>
+  </ion-list>
+  <!-- <ion-button (click)="btnTest()"> test</ion-button> -->
+</ion-content>
